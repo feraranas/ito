@@ -20,7 +20,8 @@
       "Bash(awk:*)",
       "WebFetch(domain:connectrpc.com)",
       "Bash(git log:*)",
-      "Bash(bunx tsc:*)"
+      "Bash(bunx tsc:*)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []

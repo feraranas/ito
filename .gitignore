@@ -9,6 +9,7 @@ node_modules
 */dist/*
 dist/*
 .DS_Store
+.history
 native/**/target
 native/target-rust-analyzer
 native/**/.build
@@ -16,7 +17,7 @@ out.json
 tsconfig.node.tsbuildinfo
 server/deploy-dev.sh
 
-# Sentry Config File
+# Sentry Config File 
 .env.sentry-build-plugin
 .electron-builder-cache
 .npm-cache
