@@ -179,7 +179,10 @@ async function handleKeyEventInMain(event: KeyEvent) {
     STORE_KEYS.SETTINGS,
   )
 
-  if (!isShortcutGloballyEnabled) {
+  const forceEnableShortcuts = process.env.FORCE_ENABLE_SHORTCUTS === 'true'
+  const shortcutsEnabled = forceEnableShortcuts || isShortcutGloballyEnabled
+
+  if (!shortcutsEnabled) {
     // check to see if we should stop an in-progress recording
     if (activeShortcutId !== null) {
       // Shortcut released

@@ -1,5 +1,9 @@
 import { app } from 'electron'
 import path from 'path'
+import dotenv from 'dotenv'
+
+// Load .env file for non-VITE_ prefixed environment variables
+dotenv.config()
 
 let stage = process.env.ITO_ENV || import.meta.env.VITE_ITO_ENV
 if (!stage && import.meta.env.DEV) {

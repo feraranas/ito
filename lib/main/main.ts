@@ -121,7 +121,13 @@ app.whenReady().then(async () => {
     grpcClient.setMainWindow(mainWindow)
   }
 
-  if (checkAccessibilityPermission(false)) {
+  const skipAccessibilityCheck = process.env.SKIP_ACCESSIBILITY_CHECK === 'true'
+  if (skipAccessibilityCheck) {
+    console.log(
+      'SKIP_ACCESSIBILITY_CHECK is set, starting key listener without permission check.',
+    )
+    startKeyListener()
+  } else if (checkAccessibilityPermission(false)) {
     console.log('Accessibility permissions found, starting key listener.')
     startKeyListener()
   }
